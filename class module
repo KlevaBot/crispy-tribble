@@ -1,0 +1,97 @@
+#include <iostream>
+using namespace std;
+#include<iomanip>
+class Module
+{
+public:
+    Module();//default ctor
+    Module(int nrStu, string Name, string Code, string Lec); //ctor that initializes member varibales to ceratin values
+    void setmoduleName(string Name);
+    void setModuleCode(string Code);
+    void setLecturer( string Lec);
+    void setNrStu(int nrStu);
+    string getModuleName();
+    string getLec();
+    int getnrStu();
+    string getModuleCode();
+    void input();
+    void output();
+private:
+    string Lecturer;
+    string moduleName;
+    int nrStu;
+    string moduleCode;
+};
+
+int main()
+{
+ Module school, school1;
+ school.input();
+ school1.setLecturer("Dr Vause");
+ cout<<school1.getLec()<<endl;
+ cout<<school.getModuleName()<<endl;
+ cout<<school.getModuleCode()<<endl;
+ cout<<school.getLec()<<endl;
+ cout<<school.getnrStu()<<endl;
+ if(school1.getLec()==school.getLec())
+    cout<<"We have the same prof, whoop whoop!!"<<endl;
+ else
+    cout<<"I dont know him mhhm"<<endl;
+
+
+
+return 0;
+}
+Module::Module()
+{
+    moduleName = " ";
+    moduleCode = " ";
+    nrStu= 0;
+    Lecturer =" ";}
+ Module::Module(int nrStud, string Mname, string mCode, string Lect)
+ {
+     moduleName = Mname;
+     moduleCode = mCode;
+     Lecturer =Lect;
+     nrStu = nrStud;
+
+ }
+ void Module::setmoduleName(string Name)
+ {
+     moduleName =Name;
+ }
+void Module::setLecturer(string Lect)
+ {
+     Lecturer = Lect;
+ }
+ void Module::setModuleCode(string Code)
+ {
+     moduleCode = Code;
+ }
+ void NrStu(int nrStu)
+ {
+     nrStu = nrStu;
+ }
+ string Module::getLec()
+ {
+     return Lecturer;
+ }
+string Module::getModuleCode()
+{
+    return moduleCode;
+}
+string Module::getModuleName()
+{
+    return moduleName;
+}
+int Module::getnrStu()
+{
+    return nrStu;
+}
+void Module::input()
+{
+    cout<<"Enter the module name: ";getline(cin, moduleName);
+    cout<<"Enter the Lecturer name: ";getline(cin, Lecturer);
+    cout<<"Enter the module code: ";cin>>moduleCode;
+    cout<<"Enter the number of student: ";cin>>nrStu;
+}
